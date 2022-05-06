@@ -47,6 +47,7 @@ function (req, res) {
 9. 会话型 cookie 是在什么条件下产生的？
 10. 在 express 中，Max-Age 和 Expires 是什么关系？如何产生的？
 11. cookie 如何设置签名，有什么效果？一定安全吗？
+12. 为何有 Max-Age，还需要 Expires ？
 
 ### Session
 1. Session 存储在客户端还是服务端？
