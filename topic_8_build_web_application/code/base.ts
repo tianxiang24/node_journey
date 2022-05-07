@@ -1,12 +1,39 @@
 import * as http from "http";
 import { readFile } from "fs";
 
+const store = {
+  user: [],
+};
+
+const routeHandler = [
+  {
+    path: "/user-controller/add-user",
+    handler: (user) => {
+      store.user.push(user);
+      return [undefined, `Successfully add user ${JSON.stringify(store)}`];
+    },
+  },
+];
+
 http
-  .createServer(function (req, res) {
+  .createServer(async function (req, res) {
+    const pathname = req.url;
+    const handler = routeHandler.find((i) => i.path === pathname)?.handler;
+    const buffer = [];
+
+    if (handler) {
+      for await (const chunk of req) {
+        buffer.push(chunk);
+      }
+
+      const [err, res] = handler(Buffer.concat(buffer).toString("utf-8"));
+      console.log(res, err);
+    }
+
     res.setHeader("Content-Type", "text/html");
     readFile(__dirname + "/template.html", "utf-8", (err, data) => {
-      if(err) {
-        console.log(err)
+      if (err) {
+        console.log(err);
         return;
       }
       res.end(data);
