@@ -1,19 +1,19 @@
-"use strict";
-exports.__esModule = true;
-var http = require("http");
-var fs_1 = require("fs");
+import * as http from "http";
+import { readFile } from "fs";
+
 http
-    .createServer(function (req, res) {
+  .createServer(function (req, res) {
     res.setHeader("Content-Type", "text/html");
-    (0, fs_1.readFile)(__dirname + "/template.html", "utf-8", function (err, data) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        res.end(data);
+    readFile(__dirname + "/template.html", "utf-8", (err, data) => {
+      if(err) {
+        console.log(err)
+        return;
+      }
+      res.end(data);
     });
-})
-    .listen(3000);
+  })
+  .listen(3000);
+
 /**
  * curl 'http://127.0.0.1:3000/' \
   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"' \

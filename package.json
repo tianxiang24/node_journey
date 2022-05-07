@@ -1,0 +1,29 @@
+{
+  "name": "node_journey",
+  "version": "1.0.0",
+  "description": "learn node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randomVariable2000/node_journey.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "express",
+    "connnect",
+    "cookie"
+  ],
+  "author": "huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randomVariable2000/node_journey/issues"
+  },
+  "homepage": "https://github.com/randomVariable2000/node_journey#readme",
+  "dependencies": {
+    "@types/node": "^17.0.31"
+  }
+}
