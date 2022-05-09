@@ -6,11 +6,17 @@
   "configurations": [
     {
       "name": "Launch Program",
-      "program": "${workspaceFolder}/node_journey/topic_8_build_web_application/code/base.js",
+      "program": "${workspaceFolder}/origin/test.js",
       "request": "launch",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "name": "Launch via NPM",
+      "request": "launch",
+      "runtimeArgs": ["run", "start"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
       "type": "node"
     }
   ]

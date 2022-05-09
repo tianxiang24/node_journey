@@ -1,0 +1,15 @@
+{
+  "name": "topic_8_build_web_application",
+  "version": "1.0.0",
+  "description": "1. 如何解析报文得到方法，url params，路径？\r 2. cookie 的用途与劣势？\r 3. session 为何需要与 cookie 搭配？面临安全问题时如何处理？签名 cookie 一定安全吗?\r 4. Basic 认证指的是？",
+  "main": "./connect/index.js",
+  "scripts": {
+    "start": "node ./connect/test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "finalhandler": "^1.2.0"
+  }
+}
